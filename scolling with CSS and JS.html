@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scrolling with CSS and JS</title>
+    <style>
+
+        body {
+            background-color: #01140f;
+            color: #bbb;
+        }
+
+        header {
+           background-color: hsla(108, 100%, 50%, 0.4);
+        }
+
+        h1 {
+            cursor: pointer;
+            background-color: hsla(4, 100%, 50%, 0.5);
+            font: 2em sans-serif;
+            text-align: center;
+            text-shadow: 2px 2px 3px hsl(0, 0%, 100%);
+            color: white;
+        }
+
+        main {
+            transition: transform 1s ease-in;
+            position: relative;
+            z-index: -1;
+        }
+
+        .up {
+            transform: translateY(-600px)
+        }
+        
+        p {
+            font-size: 1.5rem;
+        }
+        p::before {
+            content: attr(data-num);
+
+            font-size: 2.6rem;
+            line-height: 3rem;
+            height: 3rem;
+            width: 3rem;
+            text-align: center;
+            margin-right: 1rem;
+            display: inline-block;
+            transform: rotate(-20deg);
+            background-color: #666;
+            color: #eee;
+            border-radius: 50%;
+        }
+
+        p:nth-child(odd)::before {
+            transform: rotate(20deg);
+        } 
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Click to Scroll</h1>
+    </header>
+    <main>
+        <p data-num="1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus porro velit, aspernatur quod facilis praesentium, aliquam, harum minus reiciendis nobis quis modi dolor nemo. Laborum.</p>
+        <p data-num="2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus porro velit, aspernatur quod facilis praesentium, aliquam, harum minus reiciendis nobis quis modi dolor nemo. Laborum.</p>
+        <p data-num="3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus porro velit, aspernatur quod facilis praesentium, aliquam, harum minus reiciendis nobis quis modi dolor nemo. Laborum.</p>
+        <p data-num="4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus porro velit, aspernatur quod facilis praesentium, aliquam, harum minus reiciendis nobis quis modi dolor nemo. Laborum.</p>
+        <p data-num="5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus porro velit, aspernatur quod facilis praesentium, aliquam, harum minus reiciendis nobis quis modi dolor nemo. Laborum.</p>
+        <p data-num="6">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus porro velit, aspernatur quod facilis praesentium, aliquam, harum minus reiciendis nobis quis modi dolor nemo. Laborum.</p>
+        <p data-num="7">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus porro velit, aspernatur quod facilis praesentium, aliquam, harum minus reiciendis nobis quis modi dolor nemo. Laborum.</p>
+        <p data-num="8">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat, cupiditate blanditiis natus eligendi officia possimus dolor est ipsam tempore amet eaque accusamus quidem mollitia maiores in, repudiandae dicta, alias earum ipsum quam nesciunt magnam assumenda nulla commodi? Voluptas nesciunt harum placeat, rem facere perferendis neque itaque. Consequatur illo reiciendis voluptatem ut iste. In cupiditate consequuntur neque est praesentium? Consectetur illum velit fuga totam amet laudantium accusantium ad, ipsa repudiandae commodi! Autem repellat cumque veniam debitis molestias dolor, nostrum labore numquam porro assumenda! Inventore eaque ullam porro vero mollitia, ratione nulla dolorum ipsum placeat, architecto sunt dolor fuga voluptates earum.</p>
+        <p data-num="9">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi vel, facere at molestiae quisquam in, ex ducimus quod aspernatur quibusdam recusandae nam eius? Exercitationem praesentium itaque, nihil, accusamus rerum natus autem, animi molestias obcaecati quod neque vero nesciunt amet dicta hic officiis! Nihil ipsa, at, excepturi sunt, possimus animi quibusdam quas placeat quaerat exercitationem illum eos iusto accusantium tempore sed? Possimus, enim eaque. Rerum magnam delectus vitae ex modi eveniet cum magni perspiciatis explicabo recusandae temporibus inventore voluptate at molestiae, nam autem ratione illo repellat corrupti eos. Nesciunt optio, laborum quibusdam dolorem quasi itaque, molestiae sint tenetur neque minima culpa!</p>
+    </main>
+    <script>
+       let h1 = document.querySelector('h1');
+       h1.addEventListener('click', (ev)=>{
+         //   scrollBy(x, y) scrollTo(x, y)
+         //   scrollX(x) scrollY(y)
+         //   onscroll
+         //   window.scrollTo(0, 700);
+           console.group();
+         //   console.log('client', ev.clientX, ev.clientY);
+         //   console.log('page', ev.pageX, ev.pageY);
+         //   console.log('offset', h1.offsetLeft, h1.offsetTop);
+         //   console.log('screen window', window.screenX, window.screenX);
+        //   console.log('screen event', ev.screenX, ev.screenY);
+            console.groupEnd();
+            document.querySelector('main').classList.toggle('up')
+        })
+
+        window.addEventListener('scroll', (ev)=>{
+           console.group();
+          //  console.log('client', ev.clientX, ev.clientY);
+          //  console.log('page', ev.pageX, ev.pageY);
+          //  console.log('offset', h1.offsetLeft, h1.offsetTop);
+          //  console.log('screen window', window.screenX, window.screenX);
+          //  console.log('screen event', ev.screenX, ev.screenY);
+           console.groupEnd();
+
+          //  setTimeout( () =>{
+          //      window.scrollTo(0,0);
+          //  }, 2000);
+        })
+
+        
+        /*
+            How to scroll with using JavaScript Notes:
+
+            When it comes to scrolling using JavaScript, it has no timing or delay, unless you program it to, so that at certain points it will scroll in either seconds or milliseconds. However, for the example above, it will just to certain a point. 
+            
+            So, the following list are similar methods on how to scroll to a certain point, which are scrollBy(x, y) or scrollTo(x, y), they both use integers (while number) and use the same unit type, which is, pixel (px). The x value is for left and right and the y value is for up or down.
+            The x and y values could be used separately, for example, scrollX(x) & scrollY(y).
+
+            You can see the difference between page and client when scrolling before the element is clicked
+
+            Syntax:            
+            1. console.group() - This allows you to have lots of console.log statement together, these are seen in the 'console' section of a browsers web dev tools
+            2. scrollBy(x, y) - This lets you move by a certain point on the page, e.g. scrollBy(0, 600px) 
+            3. scrollTo(x, y) - This lets you give a position somewhere on the page, e.g. scrollTo(0, 0), is the top left of the page.
+            5. onscroll - This is used with "window.addEventListener"(window is an object) so it will keep a record of how many times it is clicked, which is seen in the 'console' section of a browsers web dev tools
+            6. client - This tracks the cursor point of where you clicked from the screen 
+            7. page - This tracks the cursor point of where you clicked from the webpage document
+            8. offset - This is used to show how far the element is from the page and it must be connected to an element, e.g, h1.offsetTop
+            9. screen window - This is used track the cursor point of where you clicked from within the browser 
+            10. screen event - This is used track the cursor point of where you clicked from the element 
+        */ 
+    </script>
+</body>
+</html>

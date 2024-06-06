@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS :target Pseudo-Class Using Javascrip</title>
+</head>
+<style>
+   
+   body {
+    text-align: center;
+    background-color: #544123;
+    color: azure;
+   } 
+   
+   h1 {
+    font-size: 2.5rem;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+   }
+
+   a {
+    font-size: 1rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 0 0.5em;
+    padding: 0.5em;
+    color: burlywood;
+    text-decoration: none;
+   } 
+   a.current {
+    background-color: cornflowerblue;
+    color: #000;
+    font-weight: bold;
+   }
+
+   p {
+    font-size: 1.4rem;
+    text-align: left;
+    margin: 1em;
+    padding: 0.5em;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   }
+
+   :target {
+    background-color: cornflowerblue;
+    color: #000;
+    font-weight: bold;
+   }
+</style>
+<body>
+    <header>
+        <h1>CSS :target Pseudo-Class</h1>
+    </header>
+    <nav>
+        <a href="#p1">Paragraph 1</a>
+        <a href="#p2">Paragraph 2</a>
+        <a href="#p3">Paragraph 3</a>
+        <a href="#p4">Paragraph 4</a>
+        <a href="#p5">Paragraph 5</a>
+        <a href="#p6">Paragraph 6</a>
+        <a href="#p7">Paragraph 7</a>
+        <a href="#p8">Paragraph 8</a>
+    </nav>
+    <main>
+        <p id="p1">1. Consectetur adipisicing elit. Voluptatem placeat recusandae facilis quidem sint iste eum consectetur, sapiente voluptatum tempore repellat. Nulla officia soluta iure, omnis facere id. Suscipit, iure!</p>
+        <p id="p2">2, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem placeat recusandae facilis quidem sint iste eum consectetur, sapiente voluptatum tempore repellat. Nulla officia soluta iure, omnis facere id. Suscipit, iure!</p>
+        <p id="p3">3. Dignissimos maxime velit id vel, neque libero enim obcaecati itaque mollitia amet? Laudantium minus itaque, ad magni natus rem, fugiat laborum unde explicabo a voluptate officia reprehenderit necessitatibus asperiores veritatis aliquam, ipsa id odit doloribus hic quas? Dolor nemo delectus optio, quia molestias aspernatur recusandae asperiores veritatis?</p>
+        <p id="p4">4. Excepturi repellendus magni odit molestias delectus neque, eos eum distinctio omnis architecto natus cum sapiente ad maiores iusto consectetur? Vero maiores voluptates placeat? Vitae, error illum laudantium architecto, voluptatem natus aperiam ducimus officiis recusandae necessitatibus fuga. Aliquid voluptas explicabo suscipit sapiente alias delectus exercitationem dolores, dolore rerum deserunt quis cum non aut iure, deleniti accusantium ducimus sed architecto, impedit eligendi quidem fugit. Nulla magnam ipsam culpa, labore explicabo expedita, quo nisi maiores fugit quia beatae.</p>
+        <p id="p5">5. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatem placeat recusandae facilis quidem sint iste eum consectetur, sapiente voluptatum tempore repellat. Nulla officia soluta iure, omnis facere id. Suscipit, iure.Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo totam sunt molestias aliquid pariatur doloribus nemo distinctio, sed similique facilis quibusdam, asperiores quidem iusto magnam!</p>
+        <p id="p6">6. Exercitationem sapiente iusto inventore tempora. Omnis assumenda tempore deleniti reiciendis sequi fugit, sit aut cumque sapiente temporibus possimus laborum officia animi voluptatem corporis corrupti dolores nam id amet fuga ullam. Et qui nulla iure delectus suscipit consectetur, quisquam accusantium odio asperiores voluptatum reiciendis debitis, deleniti laboriosam dolorum laborum accusamus doloremque? Reiciendis unde libero maxime odio commodi aspernatur tenetur assumenda fugiat necessitatibus facilis deserunt nemo incidunt ad provident aut esse qui perspiciatis ex praesentium, saepe ipsum quasi recusandae debitis exercitationem. Totam cupiditate optio, dicta pariatur omnis tempora molestias recusandae quam autem earum delectus debitis illum eum, minus deserunt doloribus possimus iusto quas.</p>
+        <p id="p7">7. Unde assumenda earum quis doloribus, similique, optio illum tenetur deleniti incidunt repellat nesciunt dicta ipsam dolore vitae, odit esse repellendus. Hic provident velit aperiam, magnam expedita minus laborum qui accusamus praesentium adipisci perspiciatis, sit odio labore officia? Porro deserunt architecto distinctio, sequi eveniet itaque odit molestiae voluptatem fugit, a commodi rem libero voluptatibus maxime delectus dolore minima laudantium illum dicta recusandae sapiente provident eligendi. Esse minus sint eligendi aspernatur excepturi, quasi consequuntur. </p>
+        <p id="p8">8. Eos consectetur nam perspiciatis assumenda, quos ipsa, dolorum necessitatibus cumque neque similique sint eveniet odio iste voluptas, exercitationem doloremque distinctio? Assumenda nostrum ipsum obcaecati dolor voluptatem quibusdam adipisci, eius veritatis fugiat esse repellendus tenetur! Eos dolor facilis pariatur, similique repellendus atque nisi ex placeat soluta natus dicta officiis, tempore, quia perferendis. Est, in? Iure dolorem aut perspiciatis tempora molestias iste sequi nihil debitis adipisci ducimus officiis pariatur illo non sit, deserunt rem commodi tenetur!</p>
+    </main>
+    <script>
+        // ChatGPT - This part of the code listens for when the webpage finishes loading
+        window.addEventListener('load', setCurr);
+        //document.addEventListener('DOMContentLoaded', setCurr);
+        // ChatGPT - This part of the code listens for when the URL hash (the part after the # symbol) changes
+        window.addEventListener('hashchange', setCurr);
+        //document.addEventListener('popstate', setCurr);
+        // ChatGPT - This is a function definition named setCurr
+            function setCurr(ev){
+                let p, a, id;
+                //target not available umtil...
+                // ChatGPT - This line of code selects the element on the page that is currently targeted by the URL hash
+                p = document.querySelector(':target'),
+                console.log(ev.type, p);
+                
+                if(p) { 
+                    id = `a[href="#${p.id}"]`;
+                    //console.log(id)
+                    document.querySelectorAll('.current').forEach(  anchor => { anchor.classList.remove('current');                        
+                    });
+                    a = document.querySelector(id);
+                    a.classList.add('current');
+                }
+            }
+    </script>
+</body>
+</html>

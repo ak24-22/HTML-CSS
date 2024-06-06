@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us</title>
+
+    <style>
+      body {
+    background-color: rgb(24, 24, 24);
+    color: aliceblue;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+    margin-bottom: 2em;
+}
+
+nav {
+    display: block;
+    padding: 1em;
+    text-decoration: none;
+}
+
+li {
+    text-decoration: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1 {
+    text-align: center;
+    color: crimson;
+
+}
+
+p {
+    text-align: center;
+    font-size: 1rem;
+}
+
+.form {
+    margin: 2em;
+}
+
+form {
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    justify-content: center;
+    color: skyblue;
+    font-size: 1.5rem;
+}
+
+
+#un, #pw, #co-pw, #email, #date, #address, #gender, #male, #female, button {
+    margin: 0.5em;
+    color: rgb(0, 255, 170);
+    background-color: rgb(0, 8, 0);
+    border: none;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+button {
+    padding-left: 2em;
+    padding-right: 2em;
+    cursor: pointer;
+}
+
+#male, #female, button:hover {
+    background-color:rgb(0, 70, 0);
+}
+
+
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1><span>AK</span>Comics</h1>
+      <nav>
+        <ul>
+          <li><a href="#Index.html">Home</a></li>
+          <li><a href="#About Us.html">About Us</a></li>
+          <li><a href="#Superheros.html">Superheros</a></li>
+          <li><a href="#Contact Us.html">Contact Us</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="Contact Us Form">
+        <h2>Contact Us</h2>
+        <p>Please fill out the form below.</p>
+        <fieldset>
+          <form>
+            <h3>* = Required</h3>
+            <label>First Name:</label>
+            <input
+              for="FName"
+              id="fn"
+              name="FName"
+              type="text"
+              placeholder="First Name"
+              required
+            />
+            <label>Last Name:</label>
+            <input
+              for="LName"
+              id="ln"
+              name="LName"
+              type="text"
+              placeholder="Last Name"
+              required
+            />
+            <label>Email:</label>
+            <input
+              for="Email"
+              id="email"
+              name="Email"
+              type="email"
+              placeholder="Email"
+              required
+            />
+            <label>Message:</label>
+            <textarea
+              for="Message"
+              id="msg"
+              name="Message"
+              placeholder="Enter Your Message Here..."
+              required
+            ></textarea>
+          </form>
+        </fieldset>
+      </section>
+      <footer>
+        <ul>
+          <li><a href="#Index.htmml">Home</a></li>
+          <li><a href="#About Us.htmml">About Us</a></li>
+          <li><a href="#Superheros.htmml">Superheros</a></li>
+          <li><a href="#Contact Us.htmml">Contact Us</a></li>
+        </ul>
+        <p>&copy;<span>Ak</span>Comics</p>
+      </footer>
+    </main>
+  </body>
+</html>

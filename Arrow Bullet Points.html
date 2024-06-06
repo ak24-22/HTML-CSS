@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Bullet Points using Pseudo Element ::after</title>
+    <style>
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            background-color: rgb(48, 48, 48);
+        }
+
+        .heading {
+            color: gold;
+            font-size: 2rem;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-weight: bolder;
+        }
+
+        .instructions {
+            font-size: 1.5rem;
+            color: white;
+        }
+        
+        .blocks:hover {
+            cursor: pointer;
+            background-color: hsla(50, 100%, 30%, 0.3);
+            border: 0.1em solid hsl(50, 100%, 40%);
+            border-radius: 1em;
+
+        }
+        p {
+            position: relative;
+            padding-left: 50px;
+            padding-right: 50px;
+        }
+        
+        .instructions p::after {
+            position: absolute;
+            content: "";
+            top: 0em;
+            left: 1em;
+            border: 0.85rem solid gold;
+            border-bottom-color: transparent;
+            border-top-color: transparent;
+            border-right-color: transparent;
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        <p class="heading">How To Play</p>
+    </div>
+        
+    <div class="instructions">
+        <div class="blocks">
+            <p>
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptates, quas mollitia minima quibusdam ullam nemo nesciunt eos sunt qui iste reiciendis error nostrum unde dignissimos cumque deserunt voluptate eveniet temporibus modi dolorum! Odit nemo adipisci.
+            </p>
+        </div>
+        <div class="blocks">
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque ullam, expedita quaerat excepturi quam sunt corporis quae nam! Obcaecati adipisci, et magni nulla nobis temporibus!
+
+            </p>
+        </div>
+        <div class="blocks">
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque ullam, expedita quaerat excepturi quam sunt corporis quae nam! Obcaecati adipisci, et magni nulla nobis temporibus!
+            </p>
+        </div>
+        <div class="blocks">
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque ullam, expedita quaerat excepturi quam sunt corporis quae nam! Obcaecati adipisci, et magni nulla nobis temporibus!
+            </p>
+        </div>
+    </div>
+</body>
+</html>

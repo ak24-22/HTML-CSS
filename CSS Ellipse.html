@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Ellipse</title>
+    <style>
+        body {
+            background-color: hsl(222, 10%, 10%);
+            color: silver;
+        }
+
+        .main{
+            max-width: 90%;
+            position: relative;
+            padding: 1em;
+            padding-right: 110px;
+            font-size: 1rem;
+            line-height: 1.5em;      
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        .main::before {
+            content: "Read More";
+            position: absolute;
+            right: 0;
+            cursor: pointer;
+            bottom: 1em;
+            line-height: 1.5em;
+            width: 100px;
+            color: cornflowerblue;
+            text-decoration: underline;
+        }
+
+        p + p{
+            color: crimson;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>CSS Ellipse</h1>
+    <main>
+        <p class="main">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Suscipit corporis labore nulla atque cumque voluptates reprehenderit voluptas. Repudiandae itaque architecto placeat consequuntur nam suscipit magnam earum aspernatur quis esse! Ipsum exercitationem sint aperiam eligendi, eos nulla animi vitae dignissimos ad quaerat eum, sed cumque.
+        </p>
+    </main>
+
+    <section>
+        <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique, est! Tempora pariatur nulla vero aspernatur error nostrum vitae qui quibusdam nisi veritatis aliquam accusamus beatae necessitatibus numquam, praesentium cumque eos doloribus reiciendis laborum nemo molestiae temporibus earum. Quis molestiae voluptatibus, expedita cumque rerum libero ad deserunt dignissimos dicta atque sed?
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel ratione molestias accusantium hic esse doloribus quos nihil voluptatibus, minima molestiae distinctio voluptatum enim nemo, ipsa quo suscipit minus quis sapiente obcaecati laudantium repellat debitis architecto culpa non! Dolorum, quos nihil repellat ipsum accusamus officia perspiciatis? Beatae quasi hic nostrum quas?
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia veritatis odio iusto praesentium iste dignissimos enim, quaerat fuga distinctio harum minus perspiciatis assumenda, eius itaque quae? Esse impedit hic quae ullam est quasi vel atque nam modi eius doloremque, consequatur illum laboriosam facere neque quos nisi incidunt repellendus tenetur aliquam.
+        </p>
+    </section>
+</body>
+</html>

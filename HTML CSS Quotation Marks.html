@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML & CSS Quotation Marks</title>
+
+<style>
+    body {
+        background-color: black;
+        color: aqua;
+        font-size: 2rem;
+    }
+
+    q{
+        quotes: "/00AB" "/00BB" "";
+        font-family: serif;
+    }
+
+    q::before{
+        content: open-quote;
+    }
+
+    q::after{
+        content: "g";
+    }
+</style>
+
+</head>
+<body>
+    <q lang="en">&laquo;Hello&raquo;</q>
+    <q>Hello</q>
+</body>
+</html>
